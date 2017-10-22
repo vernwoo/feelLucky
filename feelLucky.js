@@ -27,6 +27,6 @@ rl.on('close', function() {
 				res.write(goodies[index]);
 				res.end();
 				console.log('index is ' + index + ':' + goodies[index]);
-			}).listen(8080);
-			console.log("Now go to http://localhost:8080 to try your luck");
+			}).listen(80);
+			console.log("Now go to http://localhost to try your luck");
 		});
