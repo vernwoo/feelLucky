@@ -1,4 +1,4 @@
-//a lightweight web service that returns random fortune cookie style 'i feel lucky' phrases
+//a lightweight web service that returns 'hello world'
 //
 var http = require('http');
 var port = process.env.PORT || 8080;
