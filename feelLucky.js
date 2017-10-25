@@ -22,11 +22,12 @@ rl.on('error', function(err) {
 rl.on('close', function() {
 			console.log('Finish reading.');
 			var size = goodies.length;
+			var port = process.env.PORT || 8080;
 			http.createServer(function(req, res) {
 				index = Math.floor(Math.random()*size);
 				res.write(goodies[index]);
 				res.end();
 				console.log('index is ' + index + ':' + goodies[index]);
-			}).listen(80);
-			console.log("Now go to http://localhost to try your luck");
+			}).listen(port);
+			console.log("Now try your luck");
 		});
