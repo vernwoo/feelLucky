@@ -20,7 +20,7 @@ var size = goodies.length;
 var port = process.env.PORT || 8080;
 http.createServer(function(req, res) {
 			index = 0; //Math.floor(Math.random()*size);
-			res.write("hello world");
+			res.write(goodies[index].toString());
 			res.end();
 			console.log('index is ' + index + ':' + goodies[index]);
 		}).listen(port);
