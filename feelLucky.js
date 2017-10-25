@@ -6,6 +6,10 @@ var readline = require('readline');
 var os = require('os');
 var stream = require('stream');
 
+process.on("uncaughtException", function(err){
+	fs.writeFile("Exception.txt", err, "utf8");
+})
+
 var filePath = process.cwd() + "\\lucky.txt";
 console.log("Reading from file " + filePath);
 var instream = fs.createReadStream(filePath);
