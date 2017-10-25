@@ -4,7 +4,7 @@ var http = require('http');
 var fs = require('fs');
 
 process.on("uncaughtException", function(err){
-	fs.writeFile("Exception.txt", err, "utf8");
+	fs.writeFile("Exception.txt", err.stack, "utf8");
 })
 
 var filePath = process.cwd() + "\\lucky.txt";
