@@ -11,18 +11,15 @@ var filePath = process.cwd() + "\\lucky.txt";
 console.log("Reading from file " + filePath);
 var goodies = [];
 fs.readFile(filePath, function(err, data) { 
-			console.log("content:", data.toString());
-			goodies.push(data.toString());
+			goodies= data.toString().split("\n");
 			console.log("Finish reading.");
+			var size = goodies.length;
+			var port = process.env.PORT || 8080;
+			http.createServer(function(req, res) {
+				index = Math.floor(Math.random()*size);
+				res.write(""+goodies[index]);
+				res.end();
+				console.log('index is ' + index + ':' + goodies[index]);
+			}).listen(port);
+			console.log("Now try your luck");
 });
-
-console.log("type is: " + typeof(""+ goodies[0]));
-var size = goodies.length;
-var port = process.env.PORT || 8080;
-http.createServer(function(req, res) {
-			index = 0; //Math.floor(Math.random()*size);
-			res.write(""+goodies[index]);
-			res.end();
-			console.log('index is ' + index + ':' + goodies[index]);
-		}).listen(port);
-console.log("Now try your luck");
