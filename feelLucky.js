@@ -4,7 +4,7 @@ var http = require('http');
 var fs = require('fs');
 var isProd = true;
 var portnum = isProd ? 80 : 8080 
-var isLinux = false;
+var isLinux = true;
 var file = isLinux? "/lucky.txt" : "\\lucky.txt";
 var filePath = process.cwd() + file;
 console.log("Reading from file " + filePath);
