@@ -13,11 +13,17 @@ steps:
 - script: echo CI starts
   displayName: 'Start of CI'
 
+- task: NodeTool@0 
+  inputs:
+    versionSpec: '12.x'
+
+- task: Npm@1
+  inputs:
+  command: 'install'
+
 - script: |
-    echo Install UT framework Mocha.
-    npm install --global mocha
-    echo run unit test
-    mocha
+    echo run unit test using mocha.
+    npx mocha
   displayName: 'run unit test'
 
 - script: echo CI completes
