@@ -1,7 +1,7 @@
 //a lightweight web service that returns random fortune cookie style 'i feel lucky' phrases
 //
 var fs = require('fs');
-var isProd = true;
+var isProd = false;
 var portnum = isProd ? 80 : 8080 
 var isLinux = true;
 var file = isLinux? "/lucky.txt" : "\\lucky.txt";
