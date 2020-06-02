@@ -10,10 +10,19 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: echo CI starts
+  displayName: 'Start of CI'
+
+- task: NodeTool@0 
+  inputs:
+    versionSpec: '12.x'
+
+- script: npm install
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo run unit test.
+    npm test
+  displayName: 'run unit test'
+
+- script: echo CI completes
+  displayName: 'End of CI'
