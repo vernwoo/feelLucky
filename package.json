@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "start": "set NODE_ENV=dev && node feelLucky.js",
+    "test": "set NODE_ENV=dev && mocha"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,11 @@
     "url": "https://github.com/vernwoo/feelLucky/issues"
   },
   "homepage": "https://github.com/vernwoo/feelLucky#readme",
-  "dependencies": {
-    "mocha": "^7.2.0"
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.17.1",
+    "mocha": "^7.2.0",
+    "requirejs": "^2.3.6",
+    "supertest": "^4.0.2"
   }
 }

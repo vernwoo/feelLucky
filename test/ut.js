@@ -1,7 +1,24 @@
-const assert = require('assert');
+const supertest = require('supertest');
+const app = require('../feelLucky');
+
 
 describe('Unit test', () => {
-	it('should return 2', () => {
-		assert.equal(1+1,2);
+	let req = null;
+	let server = null;
+
+	before(function(done){
+		server = app.listen(done)
+		req = supertest.agent(server)
+	});
+
+	it('get virtual fortune cookie with success', function(done){
+		req.get('/').expect(200).end(function(err,res) {
+			console.log('response is ' + res.text);
+			done();
+		});
+	});
+
+	after(function(done){
+		server.close(done)
 	});
 });
