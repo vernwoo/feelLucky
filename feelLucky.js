@@ -16,22 +16,23 @@ var data = fs.readFileSync(filePath);
 goodies= data.toString().split("\n");
 console.log("Finish reading.");
 size = goodies.length;
-setupsite();
 
-function setupsite()
-{
-	app.get('/', function(req, res) {
+app.get('/', function(req, res) {
 				index = Math.floor(Math.random()*size);
 				res.write(""+goodies[index]);
 				res.end();
 				console.log('index is ' + index + ':' + goodies[index]);
-        });
+});
 
-	app.listen(portnum, function(){
-    		console.log("Now try your luck at http://localhost:" + portnum.toString());
-	});
+let server = app.listen(portnum, function(){
+	console.log("Now try your luck at http://localhost:" + portnum.toString());
+});
+
+function stop(){
+	server.close();
 }
 
 //export app module
 module.exports = app;
+module.exports.stop = stop;
 

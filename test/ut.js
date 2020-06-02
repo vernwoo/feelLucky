@@ -19,6 +19,7 @@ describe('Unit test', () => {
 	});
 
 	after(function(done){
-		server.close(done)
+		app.stop();
+		done();
 	});
 });

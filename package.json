@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "set NODE_ENV=dev && node feelLucky.js",
-    "test": "set NODE_ENV=dev && mocha"
+    "test": "set NODE_ENV=dev && mocha --exit"
   },
   "repository": {
     "type": "git",
