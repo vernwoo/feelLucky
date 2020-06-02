@@ -10,10 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: echo CI starts
+  displayName: 'Start of CI'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo Install UT framework Mocha.
+    npm install --global mocha
+    echo run unit test
+    mocha
+  displayName: 'run unit test'
+
+- script: echo CI completes
+  displayName: 'End of CI'
