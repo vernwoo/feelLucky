@@ -17,13 +17,11 @@ steps:
   inputs:
     versionSpec: '12.x'
 
-- task: Npm@1
-  inputs:
-  command: 'install'
+- script: npm install
 
 - script: |
-    echo run unit test using mocha.
-    npx mocha
+    echo run unit test.
+    npm test
   displayName: 'run unit test'
 
 - script: echo CI completes
