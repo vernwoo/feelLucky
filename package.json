@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/vernwoo/feelLucky/issues"
   },
-  "homepage": "https://github.com/vernwoo/feelLucky#readme"
+  "homepage": "https://github.com/vernwoo/feelLucky#readme",
+  "dependencies": {
+    "mocha": "^7.2.0"
+  }
 }
