@@ -1,0 +1,28 @@
+{
+  "name": "feellucky",
+  "version": "1.0.0",
+  "description": "a virtual fortune cookie",
+  "main": "feelLucky.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vernwoo/feelLucky.git"
+  },
+  "keywords": [
+    "virtual",
+    "fortune",
+    "cookie",
+    "luck"
+  ],
+  "author": "vernwoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vernwoo/feelLucky/issues"
+  },
+  "homepage": "https://github.com/vernwoo/feelLucky#readme"
+}
